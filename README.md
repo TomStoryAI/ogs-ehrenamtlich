@@ -15,3 +15,7 @@ Ausführbare Webapp
 
 ## Kinder
 
+# Für die OGS
+
+- Download von OpenJDK 8
+- Start der Applikation über cmd + java -jar ogs.jar
