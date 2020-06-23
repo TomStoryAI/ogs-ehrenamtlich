@@ -10,10 +10,39 @@ Optaplanner für AG Platzierungen
 Github
 Travis
 Ausführbare Webapp
+## Zeitraum
+
+AG x..x
+Tag
+ZeitraumStart
+ZeitraumEnde
+
 
 ## AG
 
+Name
+ZEITRAUM X..X
+Tage [Mon,Di,Mi,Do]
+Größe [1..x]
+
+## Wunsch
+
+KIND
+AG
+Prio [1-4]?
+
+## Ziel
+
+AG
+Kinder 1..x
+Halbjahr 
+
+
 ## Kinder
+
+Name
+WUNSCH 1..4 ?
+Schuljahr
 
 # Für die OGS
 
