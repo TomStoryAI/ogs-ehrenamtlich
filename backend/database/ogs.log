@@ -1,41 +1,20 @@
-/*C3*/SET SCHEMA PUBLIC
-drop table if exists ag CASCADE 
-drop table if exists ag_zeitraeume CASCADE 
-drop table if exists kind CASCADE 
-drop table if exists zeitraum CASCADE 
-drop table if exists zeitraum_ags CASCADE 
-create table ag (id integer not null, groesse integer not null, name varchar(255), zeitraum_ende timestamp, zeitraum_start timestamp, primary key (id))
-create table ag_zeitraeume (ag_id integer not null, zeitraeume_id integer not null)
-create table kind (id integer not null, name varchar(255), schuljahr integer not null, primary key (id))
-create table zeitraum (id integer not null, end_zeit timestamp, start_zeit timestamp, wochentag varchar(255), primary key (id))
-create table zeitraum_ags (zeitraum_id integer not null, ags_id integer not null)
-alter table ag_zeitraeume add constraint FKksg2x11lqf2kr47e0c50psmqj foreign key (zeitraeume_id) references zeitraum
-alter table ag_zeitraeume add constraint FK3h4lc4tgt2u4bwtxu46q3kmfd foreign key (ag_id) references ag
-alter table zeitraum_ags add constraint FK2j8qgi8neu2r1q2thtstmw6m1 foreign key (ags_id) references ag
-alter table zeitraum_ags add constraint FKr1vx3asyrnl8eubpuvvyojovh foreign key (zeitraum_id) references zeitraum
-INSERT INTO KIND VALUES(0,'heribert',0)
-COMMIT
-drop table if exists ag CASCADE 
-drop table if exists ag_zeitraeume CASCADE 
-drop table if exists kind CASCADE 
-drop table if exists zeitraum CASCADE 
-drop table if exists zeitraum_ags CASCADE 
-DISCONNECT
-/*C4*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C5*/SET SCHEMA PUBLIC
-DISCONNECT
 /*C6*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C7*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C8*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C9*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C10*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C11*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C12*/SET SCHEMA PUBLIC
-DISCONNECT
+create table ags (id integer not null, groesse integer not null, name varchar(255), zeitraum_ende timestamp, zeitraum_start timestamp, primary key (id))
+create table ags_zeitraeume (ag_id integer not null, zeitraeume_id integer not null)
+create table kinder (id integer not null, name varchar(255), schuljahr integer not null, primary key (id))
+create table wuensche (id integer not null, primary key (id))
+create table zeitraeume (id integer not null, end_zeit timestamp, start_zeit timestamp, wochentag varchar(255), primary key (id))
+create table zeitraeume_ags (zeitraum_id integer not null, ags_id integer not null)
+create table ziele (id integer not null, halbjahr integer not null, primary key (id))
+create table ziele_kinder (ziel_id integer not null, kinder_id integer not null)
+alter table ziele_kinder add constraint UK_mm3s0gb5v2nrhtsce5inf6wtd unique (kinder_id)
+create sequence hibernate_sequence start with 1 increment by 1
+alter table ags_zeitraeume add constraint FKjer21ng2u97lebnkmmef9a9ed foreign key (zeitraeume_id) references zeitraeume
+alter table ags_zeitraeume add constraint FK1c934kv30uiujihpg748d2oys foreign key (ag_id) references ags
+alter table zeitraeume_ags add constraint FKmij8cebtdds6nr5h5mnohug70 foreign key (ags_id) references ags
+alter table zeitraeume_ags add constraint FKolv4lw0rruofq7jofd5wxagnc foreign key (zeitraum_id) references zeitraeume
+alter table ziele_kinder add constraint FK7iaemqrchmfuokf7q0j32rft0 foreign key (kinder_id) references kinder
+alter table ziele_kinder add constraint FKo5eboxdqdin59adib0vxnekc5 foreign key (ziel_id) references ziele
+INSERT INTO KINDER VALUES(1,'G\u00fcnther',0)
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+COMMIT

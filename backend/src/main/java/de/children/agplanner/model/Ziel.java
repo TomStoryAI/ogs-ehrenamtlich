@@ -1,15 +1,23 @@
 package de.children.agplanner.model;
 
-import org.springframework.data.annotation.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Table(name = "ziele")
 public class Ziel {
 
     @Id
-    private int id;
-    private AG ag;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int ID;
+    // private AG ag;
     @OneToMany
     private List<Kind> kinder;
     private int halbjahr;
