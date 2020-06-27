@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
-
 @Component
 public class CommandLineAppStartupRunner implements CommandLineRunner {
     @Autowired
@@ -22,9 +20,9 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
     public void run(String...args) throws Exception {
         LOG.info("Was ein fantastischer Dienstag <3 <3 ");
         Kind kind = new Kind();
-        kind.setName("thomaso");
+        kind.setName("Günther");
         kindRepository.save(kind);
-        Optional<Kind> kindAusFile = kindRepository.findById(0);
-        LOG.info(kindAusFile.get().getName());
+        Iterable<Kind> kindAusFile = kindRepository.findAll();
+        kindAusFile.forEach(kindn->{LOG.info(kindn.getName());});
     }
 }

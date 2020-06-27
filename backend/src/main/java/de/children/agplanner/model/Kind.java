@@ -4,16 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "kinder")
 public class Kind {
     @Id
-    @Seq
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
     private String name;
     private int schuljahr;
