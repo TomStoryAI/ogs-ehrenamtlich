@@ -3,6 +3,8 @@ package de.children.agplanner.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.optaplanner.core.api.domain.entity.PlanningEntity;
+import org.optaplanner.core.api.domain.variable.PlanningVariable;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -14,6 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Table(name = "ags")
+@PlanningEntity
 public class AG {
 
     @Id
@@ -24,5 +27,8 @@ public class AG {
     private Timestamp zeitraumEnde;
     @ManyToMany
     private List<Zeitraum> zeitraeume;
-    private int groesse;
+    @OneToMany
+    private List<Kind> kinder;
+    @PlanningVariable(valueRangeProviderRefs = {"verfuegbareGroesse"})
+    private Integer groesse;
 }

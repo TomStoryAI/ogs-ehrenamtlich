@@ -1,0 +1,10 @@
+<solver>
+    <scanAnnotatedClasses/>
+    <scoreDirectorFactory>
+        <constraintProviderClass>de.children.agplanner.optaplanner.AGPlannerConstraintProvider</constraintProviderClass>
+    </scoreDirectorFactory>
+
+    <termination>
+        <secondsSpentLimit>10</secondsSpentLimit>
+    </termination>
+</solver>
