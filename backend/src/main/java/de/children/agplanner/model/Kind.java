@@ -18,5 +18,5 @@ public class Kind {
     private String name;
     private int schuljahr;
     @ManyToOne
-    private AG ag;
+    private AG ags;
 }

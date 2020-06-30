@@ -6,7 +6,7 @@
         <property name="properties"><bean class="org.hsqldb.persist.HsqlProperties">
             <constructor-arg><props>
                 <prop key="server.database.0">file:database/ogs-test</prop>
-                <prop key="server.dbname.0">ogs</prop>
+                <prop key="server.dbname.0">ogs-test</prop>
                 <prop key="server.no_system_exit">true</prop>
                 <prop key="server.port">9001</prop>
                 <prop key="server.silent">true</prop>

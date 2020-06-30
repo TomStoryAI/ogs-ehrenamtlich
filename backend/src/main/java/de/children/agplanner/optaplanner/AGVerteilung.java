@@ -9,25 +9,36 @@ import org.optaplanner.core.api.domain.solution.ProblemFactCollectionProperty;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @PlanningSolution
 public class AGVerteilung {
     private List<AG> agListe;
-    private List<Kind> kindListe;
     private HardSoftScore score;
-    private List<Integer> groeßeListe;
+    private List<Integer> groesseListe = new ArrayList<>();
 
     @ValueRangeProvider(id = "verfuegbareGroesse")
     @ProblemFactCollectionProperty
-    public List<Integer> getGroeße() {
-        return groeßeListe;
+    public List<Integer> getGroesse() {
+        return groesseListe;
+    }
+
+    public void setGroesse(List<Integer> groesseListe) {
+        this.groesseListe = groesseListe;
     }
 
 
     @PlanningEntityCollectionProperty
     public List<AG> getAgListe() {
+        if(agListe == null){
+            return new ArrayList<>();
+        }
         return agListe;
+    }
+
+    public  void setAgListe(List<AG> agListe) {
+        this.agListe = agListe;
     }
 
     @PlanningScore
