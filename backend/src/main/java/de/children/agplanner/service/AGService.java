@@ -15,4 +15,8 @@ public class AGService {
     public List getAllChildren(){
         return agRepository.findAll();
     }
+
+    public List getAllGroessen(){
+        return agRepository.findGroesse();
+    }
 }

@@ -19,7 +19,6 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 @Table(name = "ags")
-@PlanningEntity
 public class AG {
 
     @Id
@@ -27,9 +26,9 @@ public class AG {
     private int ID;
     private String name;
     private HardSoftScore score;
+
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "ags", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Kind> kinder;
-    @PlanningVariable(valueRangeProviderRefs = {"verfuegbareGroesse"})
     private Integer groesse;
 
     @PlanningScore

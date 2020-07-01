@@ -2,10 +2,8 @@ package de.children.agplanner.optaplanner;
 
 import de.children.agplanner.model.AG;
 import de.children.agplanner.model.Kind;
-import org.optaplanner.core.api.domain.solution.PlanningEntityCollectionProperty;
-import org.optaplanner.core.api.domain.solution.PlanningScore;
-import org.optaplanner.core.api.domain.solution.PlanningSolution;
-import org.optaplanner.core.api.domain.solution.ProblemFactCollectionProperty;
+import de.children.agplanner.model.Wunsch;
+import org.optaplanner.core.api.domain.solution.*;
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
 
@@ -14,22 +12,19 @@ import java.util.List;
 
 @PlanningSolution
 public class AGVerteilung {
-    private List<AG> agListe;
     private HardSoftScore score;
-    private List<Integer> groesseListe = new ArrayList<>();
-
-    @ValueRangeProvider(id = "verfuegbareGroesse")
     @ProblemFactCollectionProperty
-    public List<Integer> getGroesse() {
-        return groesseListe;
-    }
+    @ValueRangeProvider(id = "agOpta")
+    private List<AG> agListe;
 
-    public void setGroesse(List<Integer> groesseListe) {
-        this.groesseListe = groesseListe;
-    }
-
+    @ProblemFactCollectionProperty
+    @ValueRangeProvider(id = "wunschOpta")
+    private List<Wunsch> wunschListe = new ArrayList<Wunsch>();
 
     @PlanningEntityCollectionProperty
+    private List<Kind> kindListe = new ArrayList<>();
+
+
     public List<AG> getAgListe() {
         if(agListe == null){
             return new ArrayList<>();
@@ -49,4 +44,21 @@ public class AGVerteilung {
         this.score = score;
     }
 
+    public List<Kind> getKindListe() {
+        return kindListe;
+    }
+
+    public void setKindListe(List<Kind> kindListe) {
+        this.kindListe = kindListe;
+    }
+
+
+    public List<Wunsch> getWunschListe() {
+
+        return wunschListe;
+    }
+
+    public void setWunschListe(List<Wunsch> wunschListe) {
+        this.wunschListe = wunschListe;
+    }
 }

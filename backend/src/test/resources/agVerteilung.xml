@@ -1,7 +1,7 @@
 <solver>
     <scanAnnotatedClasses/>
     <scoreDirectorFactory>
-        <constraintProviderClass>de.children.agplanner.optaplanner.AGPlannerConstraintProvider</constraintProviderClass>
+        <easyScoreCalculatorClass>de.children.agplanner.optaplanner.AGPlannerConstraintProvider</easyScoreCalculatorClass>
     </scoreDirectorFactory>
 
     <termination>

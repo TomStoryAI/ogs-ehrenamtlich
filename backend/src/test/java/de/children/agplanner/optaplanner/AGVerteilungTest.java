@@ -31,11 +31,9 @@ class AGVerteilungTest {
     public void setUp() {
 
         unsolvedAGVerteilung = new AGVerteilung();
-        List test = agService.getAllChildren();
-        System.out.println(test.size());
         List kinder = kindService.getAllChildren();
-        unsolvedAGVerteilung.setGroesse(Arrays.asList(new Integer[]{0}));
         unsolvedAGVerteilung.setAgListe(agService.getAllChildren());
+        unsolvedAGVerteilung.setKindListe(kindService.getAllChildren());
     }
 
     @Test
