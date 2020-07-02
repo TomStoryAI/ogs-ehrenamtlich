@@ -1,13 +1,9 @@
 package de.children.agplanner.optaplanner;
 
-import de.children.agplanner.components.CommandLineAppStartupRunner;
 import de.children.agplanner.model.AG;
 import de.children.agplanner.model.Kind;
 import org.optaplanner.core.api.score.Score;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
-import org.optaplanner.core.api.score.stream.Constraint;
-import org.optaplanner.core.api.score.stream.ConstraintFactory;
-import org.optaplanner.core.api.score.stream.ConstraintProvider;
 import org.optaplanner.core.impl.score.director.easy.EasyScoreCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,9 +11,9 @@ import org.slf4j.LoggerFactory;
 import java.util.Iterator;
 
 
-public class AGPlannerConstraintProvider implements EasyScoreCalculator<AGVerteilung> {
+public class AGVerteilungEasyScore implements EasyScoreCalculator<AGVerteilung> {
 
-    private static final Logger LOG = LoggerFactory.getLogger(AGPlannerConstraintProvider.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AGVerteilungEasyScore.class);
 
 
     @Override
