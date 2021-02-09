@@ -1,7 +1,10 @@
 package de.children.agplanner.optaplanner;
 
+import de.children.agplanner.model.AG;
+import de.children.agplanner.model.Kind;
 import de.children.agplanner.service.AGService;
 import de.children.agplanner.service.KindService;
+import de.children.agplanner.service.WunschService;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.optaplanner.core.api.solver.Solver;
@@ -10,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.ImportResource;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,15 +28,18 @@ class AGVerteilungTest {
     @Autowired
     KindService kindService;
 
+    @Autowired
+    WunschService wunschService;
+
     AGVerteilung unsolvedAGVerteilung;
 
     @Before
     public void setUp() {
-
         unsolvedAGVerteilung = new AGVerteilung();
-        List kinder = kindService.getAllChildren();
-        unsolvedAGVerteilung.setAgListe(agService.getAllChildren());
-        unsolvedAGVerteilung.setKindListe(kindService.getAllChildren());
+        List<AG> allAGs = agService.getAllChildren();
+        List<Kind> allKinder = kindService.getAllChildren();
+        unsolvedAGVerteilung.setAgListe(allAGs);
+        unsolvedAGVerteilung.setKindListe(allKinder);
     }
 
     @Test
@@ -46,7 +52,8 @@ class AGVerteilungTest {
         AGVerteilung solvedCourseSchedule = solver.solve(unsolvedAGVerteilung);
 
         assertNotNull(solvedCourseSchedule.getScore());
-        assertEquals(-4, solvedCourseSchedule.getScore().getHardScore());
+        assertEquals(0, solvedCourseSchedule.getScore().getHardScore());
+        assertEquals(0, solvedCourseSchedule.getScore().getSoftScore());
     }
 
 }

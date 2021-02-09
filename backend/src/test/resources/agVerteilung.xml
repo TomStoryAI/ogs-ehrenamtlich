@@ -1,10 +1,11 @@
 <solver>
+    <environmentMode>FAST_ASSERT</environmentMode>
     <scanAnnotatedClasses/>
     <scoreDirectorFactory>
         <easyScoreCalculatorClass>de.children.agplanner.optaplanner.AGVerteilungEasyScore</easyScoreCalculatorClass>
     </scoreDirectorFactory>
 
     <termination>
-        <secondsSpentLimit>1</secondsSpentLimit>
+        <secondsSpentLimit>10</secondsSpentLimit>
     </termination>
 </solver>

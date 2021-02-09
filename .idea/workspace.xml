@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9412ba92-b885-4e01-98c1-83ca5035c20d" name="Default Changelist" comment="" />
+    <list default="true" id="9412ba92-b885-4e01-98c1-83ca5035c20d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/children/agplanner/optaplanner/AGVerteilungEasyScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/children/agplanner/optaplanner/AGVerteilungEasyScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/children/agplanner/optaplanner/AGVerteilungTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/children/agplanner/optaplanner/AGVerteilungTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/resources/agVerteilung.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/resources/agVerteilung.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/resources/sql/init-data-ag.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/resources/sql/init-data-ag.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/resources/sql/init-data-kinder.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/resources/sql/init-data-kinder.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/resources/sql/init-data-wunsch.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/resources/sql/init-data-wunsch.sql" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +52,8 @@
       <option name="presentableId" value="Default" />
       <updated>1593515276416</updated>
       <workItem from="1593515277753" duration="26000" />
+      <workItem from="1594093817073" duration="526000" />
+      <workItem from="1594450075306" duration="861000" />
     </task>
     <servers />
   </component>
@@ -52,7 +65,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

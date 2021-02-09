@@ -17,14 +17,9 @@ public class Wunsch {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int ID;
+    @ManyToMany
+    private List<Kind> kind;
     @OneToOne
-    private Kind kind;
-    @OneToOne
-    private AG wunschAG1;
-    @OneToOne
-    private AG wunschAG2;
-    @OneToOne
-    private AG wunschAG3;
-    @OneToOne
-    private AG wunschAG4;
+    private AG wunschAg;
+    private Integer prioritaet;
 }
